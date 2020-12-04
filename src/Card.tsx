@@ -12,7 +12,7 @@ const controlRerenderingHOC = <P extends object & PreventComponentRerendering>(
   memo(
     (props) => <WrappedComponent {...(props as P)} />,
     (prevProps: P, nextProps: P) =>
-      nextProps.doPreventRerendering === true ? true : false
+      nextProps?.doPreventRerendering === true ? true : false
   );
 
 interface Props extends PreventComponentRerendering {
