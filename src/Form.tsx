@@ -20,7 +20,7 @@ const Form: FunctionComponent<Props> = ({ firstName, updateFirstName }) => {
           updateFirstName && updateFirstName(e.target.value)
         }
       />
-      <Card doPreventRerendering={true} />
+      <Card />
     </label>
   );
 };
