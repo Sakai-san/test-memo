@@ -1,21 +1,17 @@
 import React, { FunctionComponent, memo, ComponentType } from "react";
+import { createFactory } from "react";
 import { connect } from "react-redux";
+import { compose } from "redux";
+import { isPropertySignature } from "typescript";
 import { AppState } from "./store/types";
 
-interface PreventComponentRerendering {
-  doPreventRerendering?: boolean;
-}
-
-const controlRerenderingHOC = <P extends object & PreventComponentRerendering>(
-  WrappedComponent: ComponentType<P>
-) =>
+const withNoRerendering = <P extends {}>(WrappedComponent: ComponentType<P>) =>
   memo(
     (props) => <WrappedComponent {...(props as P)} />,
-    (prevProps: P, nextProps: P) =>
-      nextProps?.doPreventRerendering === true ? true : false
+    (prevProps: P, nextProps: P) => true
   );
 
-interface Props extends PreventComponentRerendering {
+interface Props {
   firstName?: string;
 }
 
@@ -23,7 +19,15 @@ const Card: FunctionComponent<Props> = ({ firstName }) => {
   return <div style={{ border: "2px solid red" }}>Hello {firstName}</div>;
 };
 
+export default compose(
+  connect((state: AppState) => ({
+    firstName: state?.firstName,
+  }))
+)(withNoRerendering(Card));
+
+/*
 export default connect((state: AppState) => ({
   firstName: state?.firstName,
   doPreventRerendering: true,
-}))(controlRerenderingHOC(Card));
+}))(withcontrolRerendering(Card));
+*/

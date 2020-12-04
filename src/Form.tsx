@@ -12,16 +12,18 @@ interface Props {
 const Form: FunctionComponent<Props> = ({ firstName, updateFirstName }) => {
   console.log("rerendering form", firstName);
   return (
-    <label>
-      Enter your first name
-      <input
-        value={firstName}
-        onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          updateFirstName && updateFirstName(e.target.value)
-        }
-      />
+    <div>
+      <label>
+        Enter your first name
+        <input
+          value={firstName}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            updateFirstName && updateFirstName(e.target.value)
+          }
+        />
+      </label>
       <Card />
-    </label>
+    </div>
   );
 };
 
