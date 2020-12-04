@@ -23,6 +23,6 @@ const Card: FunctionComponent<Props> = ({ firstName }) => {
   return <div style={{ border: "2px solid red" }}>Hello {firstName}</div>;
 };
 
-export default connect((state: AppState, ownProps?) => ({
+export default connect((state: AppState) => ({
   firstName: state?.firstName,
 }))(controlRerenderingHOC(Card));

@@ -26,7 +26,7 @@ const Form: FunctionComponent<Props> = ({ firstName, updateFirstName }) => {
 };
 
 export default connect(
-  (state: AppState, ownProps?) => ({ firstName: state?.firstName }),
+  (state: AppState) => ({ firstName: state?.firstName }),
   (dispatch) => {
     return {
       updateFirstName: (firstName: string) =>
