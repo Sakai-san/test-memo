@@ -2,11 +2,11 @@ import React, { FunctionComponent, memo } from "react";
 import { connect } from "react-redux";
 import { AppState } from "./store/types";
 
-interface ControlledRerenderingHOC {
+interface PreventComponentRerendering {
   doPreventRerendering?: boolean;
 }
 
-const controlRerenderingHOC = <P extends object & ControlledRerenderingHOC>(
+const controlRerenderingHOC = <P extends object & PreventComponentRerendering>(
   WrappedComponent: FunctionComponent<P>
 ) =>
   memo(
@@ -15,7 +15,7 @@ const controlRerenderingHOC = <P extends object & ControlledRerenderingHOC>(
       nextProps.doPreventRerendering === true ? true : false
   );
 
-interface Props extends ControlledRerenderingHOC {
+interface Props extends PreventComponentRerendering {
   firstName?: string;
 }
 
