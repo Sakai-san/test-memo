@@ -1,12 +1,7 @@
-import React, { FunctionComponent, memo, ComponentType } from "react";
+import { FunctionComponent } from "react";
 import { connect } from "react-redux";
+import withNoRerendering from "./HOC/withNoRerendering";
 import { AppState } from "./store/types";
-
-const withNoRerendering = <P extends {}>(WrappedComponent: ComponentType<P>) =>
-  memo(
-    (props) => <WrappedComponent {...(props as P)} />,
-    (prevProps, nextProps) => true
-  );
 
 type Props = {
   firstName?: string;
@@ -19,4 +14,4 @@ const Card: FunctionComponent<Props> = ({ firstName }) => {
 export default connect((state: AppState) => ({
   firstName: state?.firstName,
   doPreventRerendering: false,
-}))(withNoRerendering<Props>(Card));
+}))(withNoRerendering(Card));
