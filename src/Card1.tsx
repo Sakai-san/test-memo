@@ -13,7 +13,7 @@ const Card1: FunctionComponent<Props> = () => {
     (prevProps: Props, nextProps: Props) => true
   );
 
-  return <div style={{ border: "2px solid blue" }}>Hello {firstName}</div>;
+  return <div style={{ border: "2px solid blue" }}>Card 1 {firstName}</div>;
 };
 
 export default withNoRerendering(Card1);

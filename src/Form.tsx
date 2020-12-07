@@ -1,6 +1,7 @@
 import React, { FunctionComponent, ChangeEvent } from "react";
 import Card from "./Card";
 import Card1 from "./Card1";
+import Card2 from "./Card2";
 import { connect } from "react-redux";
 import { makeUpdateFirstName } from "./store/action";
 import { AppState } from "./store/types";
@@ -11,7 +12,6 @@ interface Props {
 }
 
 const Form: FunctionComponent<Props> = ({ firstName, updateFirstName }) => {
-  console.log("rerendering form", firstName);
   return (
     <div>
       <label>
@@ -25,6 +25,7 @@ const Form: FunctionComponent<Props> = ({ firstName, updateFirstName }) => {
       </label>
       <Card />
       <Card1 />
+      <Card2 firstName={firstName} />
     </div>
   );
 };

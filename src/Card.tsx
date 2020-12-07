@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Card: FunctionComponent<Props> = ({ firstName }) => {
-  return <div style={{ border: "2px solid red" }}>Hello {firstName}</div>;
+  return <div style={{ border: "2px solid red" }}>Card {firstName}</div>;
 };
 
 export default connect((state: AppState) => ({
