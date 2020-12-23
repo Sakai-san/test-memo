@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, useRef } from "react";
+/*import React, { FunctionComponent, useState, useEffect, useRef } from "react";
 import { makeStyles, createStyles } from "@material-ui/core";
 import { definition } from "@uesio/ui";
 import Alert from "../alert/alert";
@@ -90,3 +90,6 @@ const Feedback: FunctionComponent<FeedbackProps> = (props) => {
 Feedback.displayName = "Feedback";
 
 export default Feedback;
+*/
+
+export default () => null;
