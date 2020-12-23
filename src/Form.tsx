@@ -2,6 +2,7 @@ import React, { FunctionComponent, ChangeEvent } from "react";
 import Card from "./Card";
 import Card1 from "./Card1";
 import Card2 from "./Card2";
+import Card3 from "./Card3";
 import { connect } from "react-redux";
 import { makeUpdateFirstName } from "./store/action";
 import { AppState } from "./store/types";
@@ -26,6 +27,7 @@ const Form: FunctionComponent<Props> = ({ firstName, updateFirstName }) => {
       <Card />
       <Card1 />
       <Card2 firstName={firstName} />
+      <Card3 firstName={firstName} />
     </div>
   );
 };
