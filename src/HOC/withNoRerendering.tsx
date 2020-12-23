@@ -1,8 +1,8 @@
-import { memo, ComponentType, FunctionComponent } from "react";
+import { memo, ComponentType } from "react";
 
 const withNoRerendering = <P extends {}>(
   WrappedComponent: ComponentType<P>
-): FunctionComponent<P> =>
+): ComponentType<P> =>
   memo(
     (props) => <WrappedComponent {...(props as P)} />,
     (prevProps, nextProps) => true
