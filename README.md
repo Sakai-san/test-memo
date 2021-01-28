@@ -44,8 +44,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-Some Markdown text with <span style="color:blue">some *blue* text</span>.
-
-> <span style="color:blue">As a reminder, in a `async` function, even if you resolve a `Promise` using `await` and returns that resolved value, that function still returns a `Promise`. The following example illustrates that.</span>
