@@ -46,4 +46,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
+Some Markdown text with <span style="color:blue">some *blue* text</span>.
+
 > <span style="color:blue">As a reminder, in a `async` function, even if you resolve a `Promise` using `await` and returns that resolved value, that function still returns a `Promise`. The following example illustrates that.</span>
